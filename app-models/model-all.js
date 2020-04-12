@@ -1,12 +1,10 @@
 const db = require('../app-util/dbconfig');
 const script = require('../app-util/Script');
 
-exports.login = async (user_name,user_phone,user_type)=>{
+exports.login = async (username)=>{
     const query = await db.query(script.login,{
         replacements: {
-            user_name,
-            user_phone,
-            user_type
+            username
           },
           type: db.QueryTypes.SELECT
     });

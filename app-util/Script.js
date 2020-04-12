@@ -1,0 +1,1 @@
+exports.login = "SELECT * FROM kLOdBTBaDk.teacher WHERE teacher_username = :username OR teacher_email = :username";
