@@ -4,8 +4,6 @@ const parser = require('body-parser');
 
 const db = require('./app-util/dbconfig');
 const teacherRouter = require('./app-routers/route-teacher');
-const allRouter = require('./app-routers/route-all');
-
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -16,7 +14,7 @@ app.get('/',(req,res,next)=>{
     res.send({code:200,message:"ok"});
 });
 
-app.use('/api/all',allRouter);
+app.use('/api/teacher',teacherRouter);
 
 db.authenticate()
   .then(() => {
