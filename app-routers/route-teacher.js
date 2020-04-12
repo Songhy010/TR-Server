@@ -7,4 +7,8 @@ const routers = express.Router();
 const basic = auth({users:{'T0$r3@n':'$3m$0nghy-T0$r3@n'}})
 
 routers.post('/login',basic,controller.login);
+routers.post('/teach',controller.teach);
+routers.post('/create-teach',controller.createTeach);
+
+
 module.exports = routers;
